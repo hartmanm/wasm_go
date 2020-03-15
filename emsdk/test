@@ -1,0 +1,9 @@
+#!bin/bash
+mkdir hello
+cd hello
+cat << EOF > hello.c
+#include <stdio.h>
+int main(int argc, char ** argv) {
+  printf("Hello WASM!\n");
+}
+EOF

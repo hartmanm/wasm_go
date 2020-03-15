@@ -1,0 +1,137 @@
+{
+  "linux": {
+    "build_steps": [
+      {
+        "name": "Build Wabt",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=wabt"]
+      },
+      {
+        "name": "Build Binaryen",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=binaryen"]
+      },
+      {
+        "name": "Build V8",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=v8"]
+      },
+      {
+        "name": "Build LLVM",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=llvm", "--no-tool-tests"]
+      },
+      {
+        "name": "Build fastcomp",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=fastcomp"]
+      },
+      {
+        "name": "Build Emscripten",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=emscripten"]
+      }
+    ],
+    "test_steps": [
+      {
+        "name": "Emscripten testsuite (upstream, wasm0)",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-build",
+                    "--test-include=emtest", "--test-param=wasm0"]
+      },
+      {
+        "name": "Emscripten testsuite (upstream, wasm3)",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-build",
+                    "--test-include=emtest", "--test-param=wasm3"]
+      },
+      {
+        "name": "Emscripten testsuite (upstream, other)",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-build",
+                    "--test-include=emtest", "--test-param=other"]
+      },
+      {
+        "name": "Emscripten testsuite (asm2wasm, wasm2)",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-build",
+                    "--test-include=emtest-asm", "--test-param=wasm2"]
+      },
+      {
+        "name": "Emscripten testsuite (asm2wasm, other)",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-build",
+                    "--test-include=emtest-asm", "--test-param=other"]
+      }
+    ]
+  },
+  "mac": {
+    "build_steps": [
+      {
+        "name": "Build Wabt",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=wabt"]
+      },
+      {
+        "name": "Build Binaryen",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=binaryen"]
+      },
+      {
+        "name": "Build V8",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=v8"]
+      },
+      {
+        "name": "Build LLVM",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=llvm", "--no-tool-tests"]
+      },
+      {
+        "name": "Build fastcomp",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=fastcomp"]
+      },
+      {
+        "name": "Build Emscripten",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=emscripten"]
+      }
+    ],
+    "test_steps": [
+      {
+        "name": "Emscripten testsuite (upstream, wasms)",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-build",
+                    "--test-include=emtest", "--test-param=wasms"]
+      },
+      {
+        "name": "Emscripten testsuite (upstream, other)",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-build",
+                    "--test-include=emtest", "--test-param=other"]
+      }
+    ]
+  },
+  "win": {
+    "build_steps": [
+      {
+        "name": "Build Wabt",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=wabt"]
+      },
+      {
+        "name": "Build Binaryen",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=binaryen"]
+      },
+      {
+        "name": "Build V8",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=v8"]
+      },
+      {
+        "name": "Build LLVM",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=llvm", "--no-tool-tests"]
+      },
+      {
+        "name": "Build fastcomp",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=fastcomp"]
+      },
+      {
+        "name": "Build Emscripten",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-test", "--build-include=emscripten"]
+      }
+    ],
+    "test_steps": [
+            {
+        "name": "Emscripten testsuite (upstream, wasm2)",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-build",
+                    "--test-include=emtest", "--test-param=wasm2"]
+      },
+      {
+        "name": "Emscripten testsuite (upstream, other)",
+        "command": ["waterfall/src/build.py", "--no-sync", "--no-build",
+                    "--test-include=emtest", "--test-param=other"]
+      }
+    ]
+  }
+}

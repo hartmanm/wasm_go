@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "devDependencies": {
+    "ws": "~0.4.28"
+  },
+  "dependencies": {
+    "google-closure-compiler": "20191111.0.0",
+    "html-minifier-terser": "5.0.2"
+  }
+}
