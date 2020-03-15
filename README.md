@@ -19,7 +19,7 @@ bash wasm_go <target file> <second parameter to install else install will be ski
 - Minor modifications to files to do things like: make chrome the default browser (it can utilize your GPU with WASM).
 
 - a hello WASM example c program (hello.c) and simple example cpp program (out.cpp) are included for testing:
--
+
 - after running with install then:
 - bash wasm_go hello.c
 - bash wasm_go out.cpp
