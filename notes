@@ -1,0 +1,90 @@
+Wasm
+
+After macOS update, needed to :
+
+xcode-select --install
+
+To install cmd line tools
+
+With Catalina alot is now broken
+
+Added emrun.py
+
+python emrun.py /Users/macmini/Library/Mobile\ Documents/com\~apple\~CloudDocs/Wasm/programs/palindrome/ms.html 
+
+This runs on localhost the local ms.html
+
+Need to wrap use of it, how
+
+install cmake from App Store
+
+mkdir <target install dir>
+
+cd <target install dir>
+
+git clone https://github.com/emscripten-core/emsdk.git
+
+cd emsdk
+
+./emsdk install latest
+
+ ./emsdk activate latest
+
+Note: ignore jvm error unless you want java support
+
+source ./emsdk_env.sh
+
+install complete
+
+mkdir test
+
+write a hello.c or cp your own c file to the dir
+
+run:
+
+emcc hello.c -s WASM=1 -O3 -o ms.html
+
+emcc hello.c -s WASM=1 -O3
+
+emcc hello.c -o hello.html
+
+mkdir <>
+cp <c++> to folder
+Note ms.html is cleaned output html
+js source file at bottom needs to be changed
+make with -o <source_name>.js
+then cp and edit ms.html with that source name and launch with ms.html
+
+use:
+
+emcc <filename>.cpp -s ENVIRONMENT=web -s WASM=1 -O0 -o <name>.js
+
+
+emcc bmc.c++ -s ENVIRONMENT=web -s WASM=1 -O0 -o bmc.js
+
+
+emcc hartmami.adventure.c -s ENVIRONMENT=web -s WASM=1 -O3 -o adventure.js --emrun
+
+try using ms.html this way:
+--shell-file html_template/shell_minimal.html
+
+
+emrun ms.html —no_browser --port 8080 
+
+
+ps -ef | grep -v grep | grep emrun 
+
+pkill -f emrun
+
+
+in C:
+#include <emscripten/emscripten.h>
+
+-O0 for testing
+optimization level 3 (highest) O3
+emcc pal_test.cpp -s WASM=1 -O0 -o pal_test.html
+web only:
+emcc pal_test.cpp -s ENVIRONMENT=web -s WASM=1 -O0 -o pal_test.html
+
+
+emrun <file_name.html>—no_browser --port 8080 
