@@ -31,6 +31,12 @@
 # add button to output source text in ms.html
 # automate installation of required; at least for linux
 #
+
+echo "
+now deprecated
+"
+exec true
+
 # 3 is highest, 0 is lowest
 # change here:
 OPTIMIZATION_LEVEL=0
